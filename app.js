@@ -3,8 +3,12 @@ const container = document.getElementById("grid");
 function makeGrid(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
+  let div = document.createElement("div");
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
   for (c = 0; c < (rows * cols); c++) {
-    let div = document.createElement("div");
+    div = document.createElement("div");
     container.appendChild(div).className = "grid-item";
     div.addEventListener("mouseover", (event) => {
       event.target.style.backgroundColor = 'lightgray';
@@ -36,6 +40,7 @@ function sizePrompt() {
   }
   console.log(row);
   console.log(column);
+  makeGrid(row, column);
 }
 
 makeGrid(16, 16);
