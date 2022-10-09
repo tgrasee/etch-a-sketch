@@ -19,12 +19,12 @@ function makeGrid(rows, cols) {
   clearBtn.addEventListener("click", () => {
     window.location.reload();
     });
+}
 
-  let gridSize = document.getElementById("gridSize");
+let gridSize = document.getElementById("gridSize");
   gridSize.addEventListener("click", () => {
     sizePrompt();
   });
-}
 
 function sizePrompt() {
   let row = prompt("Please enter how many rows for the new grid", "16");
