@@ -17,7 +17,7 @@ function makeGrid(rows, cols) {
 
   let clearBtn = document.getElementById("clearBtn");
   clearBtn.addEventListener("click", () => {
-    window.location.reload();
+    makeGrid(rows, cols);
     });
 }
 
