@@ -1,18 +1,23 @@
 const container = document.getElementById("grid");
 
 function makeGrid(rows, cols) {
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  let div = document.createElement("div");
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-  for (c = 0; c < (rows * cols); c++) {
-    div = document.createElement("div");
-    container.appendChild(div).className = "grid-item";
-    div.addEventListener("mouseover", (event) => {
+  for (let r = 0; r < (rows); r++) {
+    let row = document.createElement("div");
+    container.appendChild(row).classList = "row";
+    row.addEventListener("mouseover", (event) => {
       event.target.style.backgroundColor = 'lightgray';
       });
+    for (let c = 0; c < (cols); c++) {
+      let column = document.createElement("div");
+      container.appendChild(column).classList = "column";
+      column.addEventListener("mouseover", (event) => {
+        event.target.style.backgroundColor = 'lightgray';
+        });
+      row.appendChild(column);
+    }
   };
 
   let clearBtn = document.getElementById("clearBtn");
