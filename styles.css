@@ -31,12 +31,13 @@ body {
   flex: 1;
 }
 
-#title, .buttons {
+#title, .buttons, .radioBtns {
   display: flex;
   justify-content: center;
   margin: auto;
 }
 
-.buttons {
-  justify-content: space-evenly;
+.buttons, .radioBtns {
+  margin: 2px;
+  gap: 10px;
 }
